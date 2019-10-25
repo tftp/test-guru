@@ -1,5 +1,3 @@
 class VersionApp
-  def initialize
-    :version_number = '0.1.0'
-  end
+    version_number = '0.1.0'
 end
