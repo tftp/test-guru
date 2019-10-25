@@ -9,18 +9,19 @@ Things you may want to cover:
 
 * Ruby version: ruby 2.5.5-p157
 
-* System dependencies
+* Rails version: Rails 6.0.0
 
-* Configuration
+* System dependencies:
+  Nodejs and yarn must be installed in order to install rails 6 correctly.
 
-* Database creation
+* Configuration: no special configuration is required
 
-* Database initialization
+* Database creation: not yet
+
+* Database initialization: not yet
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
