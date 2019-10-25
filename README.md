@@ -5,7 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Semantic Versioning 2.0.0: https://semver.org/
+
+* Ruby version: ruby 2.5.5-p157
 
 * System dependencies
 
