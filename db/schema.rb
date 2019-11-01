@@ -44,17 +44,17 @@ ActiveRecord::Schema.define(version: 2019_11_01_121039) do
     t.index ["categories_id"], name: "index_tests_on_categories_id"
   end
 
+  create_table "tests_users", id: false, force: :cascade do |t|
+    t.integer "test_id"
+    t.integer "user_id"
+    t.index ["test_id"], name: "index_tests_users_on_test_id"
+    t.index ["user_id"], name: "index_tests_users_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users_tests", id: false, force: :cascade do |t|
-    t.integer "tests_id"
-    t.integer "users_id"
-    t.index ["tests_id"], name: "index_users_tests_on_tests_id"
-    t.index ["users_id"], name: "index_users_tests_on_users_id"
   end
 
   add_foreign_key "answers", "questions", column: "questions_id"
