@@ -40,3 +40,7 @@ Answer.create([
                  {body: 'Core java is used to developing the application of java.', questions_id: 8},
                  {body: 'Yes! Python is a case sensitive programming language.', questions_id: 9}
   ])
+User.create([
+                 {name: 'Bom'},
+                 {name: 'Bim'}
+  ])
