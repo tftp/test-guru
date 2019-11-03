@@ -4,12 +4,7 @@ class Test < ApplicationRecord
   has_and_belongs_to_many :users
 
   def self.list_tests_for_category(name)
-    list = []
-    id = Category.find_by(title: name).id
-    Test.where(category_id: id).order('title DESC').each do |test|
-      list << test.title
-    end
-    return list
+    Test.joins('JOIN categories ON tests.category_id == categories.id').where(categories.title: name).order('title DESC').pluck(:title)
   end
 
 end
