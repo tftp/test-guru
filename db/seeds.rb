@@ -6,41 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([
-                 {title: 'Frontend'},
-                 {title: 'Backend'},
-                 {title: 'Machine Learning'}
-  ])
-Test.create([
-                 {title: 'HTML', categories_id: 1},
-                 {title: 'JavaScript', level: 1, categories_id: 1},
-                 {title: 'Ruby', level: 2, categories_id: 2},
-                 {title: 'Java', level: 3, categories_id: 2},
-                 {title: 'Python', level: 2, categories_id: 3}
-  ])
-Question.create([
-                 {body: 'What is a class?', tests_id: 3},
-                 {body: 'What is an object?', tests_id: 3},
-                 {body: 'How would you declare and use a constructor in Ruby?', tests_id: 3},
-                 {body: 'What are tags?', tests_id: 1},
-                 {body: 'What is HTML?', tests_id: 1},
-                 {body: 'What is JavaScript?', tests_id: 2},
-                 {body: 'What are JavaScript Data Types?', tests_id: 2},
-                 {body: 'What is the core Java?', tests_id: 4},
-                 {body: 'Is python a case sensitive language?', tests_id: 5}
-  ])
-Answer.create([
-                 {body: 'A class is a blueprint from which objects are created.', questions_id: 1},
-                 {body: 'The object is also called as an instance of a class.', questions_id: 2},
-                 {body: 'Constructors are used to initialize the instance variables.', questions_id: 3},
-                 {body: 'A set of characters constituting a formatted command for a Web page', questions_id: 4},
-                 {body: 'Hypertext Markup Language', questions_id: 5},
-                 {body: 'JavaScript is a client-side as well as server side scripting language', questions_id: 6},
-                 {body: 'Number, String, Undefined, Boolean, Object', questions_id: 7},
-                 {body: 'Core java is used to developing the application of java.', questions_id: 8},
-                 {body: 'Yes! Python is a case sensitive programming language.', questions_id: 9}
-  ])
-User.create([
-                 {name: 'Bom'},
-                 {name: 'Bim'}
-  ])
+category1 = Category.create(title: 'Frontend')
+category2 = Category.create(title: 'Backend')
+category3 = Category.create(title: 'Machine Learning')
+
+test1 = Test.create(title: 'HTML').categories << category1
+test2 = Test.create(title: 'JavaScript', level: 1).canegories << category1
+test3 = Test.create(title: 'Ruby', level: 2).canegories << category2
+test4 = Test.create(title: 'Java', level: 3).canegories << category2
+test5 = Test.create(title: 'Python', level: 2).canegories << category3
+
+question1 = Question.create(body: 'What is a class?').tests << test3
+question2 = Question.create(body: 'What is an object?').tests << test3
+question3 = Question.create(body: 'How would you declare and use a constructor in Ruby?').tests << test3
+question4 = Question.create(body: 'What are tags?').tests << test1
+question5 = Question.create(body: 'What is HTML?').tests << test1
+question6 = Question.create(body: 'What is JavaScript?').tests << test2
+question7 = Question.create(body: 'What are JavaScript Data Types?').tests << test2
+question8 = Question.create(body: 'What is the core Java?').tests << test4
+question9 = Question.create(body: 'Is python a case sensitive language?').tests << test5
+
+answer1 = Answer.create(body: 'A class is a blueprint from which objects are created.').questions << question1
+answer2 = Answer.create(body: 'The object is also called as an instance of a class.').questions << question2
+answer3 = Answer.create(body: 'Constructors are used to initialize the instance variables.').questions << question3
+answer4 = Answer.create(body: 'A set of characters constituting a formatted command for a Web page').questions << question4
+answer5 = Answer.create(body: 'Hypertext Markup Language').questions << question5
+answer6 = Answer.create(body: 'JavaScript is a client-side as well as server side scripting language').questions << question6
+answer7 = Answer.create(body: 'Number, String, Undefined, Boolean, Object').questions << question7
+answer8 = Answer.create(body: 'Core java is used to developing the application of java.').questions << question8
+answer9 = Answer.create(body: 'Yes! Python is a case sensitive programming language.').questions << question9
+
+User.create([{name: 'Bom'}, {name: 'Bim'}])
