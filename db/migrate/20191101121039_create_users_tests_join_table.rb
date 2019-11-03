@@ -1,12 +1,8 @@
 class CreateUsersTestsJoinTable < ActiveRecord::Migration[6.0]
   def change
     create_table :tests_users, id: false do |t|
-      t.integer :test_id
-      t.integer :user_id
+      t.references :test, foreign_key: true
+      t.references :user, foreign_key: true
     end
-
-    add_index :tests_users, :user_id
-    add_index :tests_users, :test_id
-
   end
 end
