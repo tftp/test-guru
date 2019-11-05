@@ -10,6 +10,9 @@ category1 = Category.create(title: 'Frontend')
 category2 = Category.create(title: 'Backend')
 category3 = Category.create(title: 'Machine Learning')
 
+user1 = User.create(name: 'Bom')
+user2 = User.create(name: 'Bim')
+
 test1 = category1.tests.create(title: 'HTML')
 test2 = category1.tests.create(title: 'JavaScript', level: 1)
 test3 = category2.tests.create(title: 'Ruby', level: 2)
@@ -35,5 +38,3 @@ answer6 = question6.answers.create(body: 'JavaScript is a client-side as well as
 answer7 = question7.answers.create(body: 'Number, String, Undefined, Boolean, Object')
 answer8 = question8.answers.create(body: 'Core java is used to developing the application of java.')
 answer9 = question9.answers.create(body: 'Yes! Python is a case sensitive programming language.')
-
-User.create([{name: 'Bom'}, {name: 'Bim'}])
