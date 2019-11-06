@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_154057) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "level", default: 1
     t.integer "category_id"
-    t.integer "author"
+    t.integer "author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
