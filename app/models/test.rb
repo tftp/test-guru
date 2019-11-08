@@ -4,8 +4,10 @@ class Test < ApplicationRecord
   has_many :questions
   has_and_belongs_to_many :users
 
-  def self.list_tests_for_category(name)
-    Category.joins(:tests).where(title: name).order('tests.title DESC').pluck('tests.title')
-  end
+  scope :low_lewel, -> {where(level: 0..1)}
+  scope :middle_lewel, -> {where(level: 2..4)}
+  scope :high_lewel, -> {where(level: 5..Float::INFINITY)}
+  scope :list_tests_for_category, -> (name){Category.joins(:tests).where(title: name).order('tests.title DESC').pluck('tests.title')}
+  scope :level, -> (level){where(level: level)}
 
 end
