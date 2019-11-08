@@ -10,4 +10,8 @@ class Test < ApplicationRecord
   scope :list_tests_for_category, -> (name){Category.joins(:tests).where(title: name).order('tests.title DESC').pluck('tests.title')}
   scope :level, -> (level){where(level: level)}
 
+  validates :level, numericality: {only_integer: true, greater_than: -1}
+  validates :title, uniqueness: {scope: :level}
+  validates :title, presence: true
+
 end
