@@ -16,12 +16,24 @@ Things you may want to cover:
 
 * Configuration: no special configuration is required
 
-* Database creation: not yet
+* Database creation: create database test-guru
 
-* Database initialization: not yet
+* Database initialization: yes
+
+* What news?
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
-
+  08.11.2019
+  created new scope-methods:
+  for Test:
+  low_level, middle_level, high_lewel for selection tests for level
+  low     - 0..1
+  middle  - 2..4
+  hight   - 5 and above
+  list_tests_for_category(name), where name is name of category
+  level - it is scope for select data of users tests from level (example: user1.tests.level(1))
+  for Answer:
+  true_answers - select true questions answers
 * Deployment instructions
