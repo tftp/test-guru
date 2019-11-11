@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
+def list_test(level)
+  self.tests.where(level: level)
+end
+  
 end

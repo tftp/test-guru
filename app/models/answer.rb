@@ -9,7 +9,7 @@ class Answer < ApplicationRecord
   private
 
   def include_answers
-    errors.add(:question) unless question.answers.count.in?(1..4)
+    errors.add(:question) if question.answers.count > 3
   end
 
 end
