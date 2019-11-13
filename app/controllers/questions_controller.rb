@@ -27,6 +27,11 @@ class QuestionsController < ApplicationController
     redirect_to test_questions_path
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.delete
+  end
+
   private
 
   def rescue_with_question_not_found
