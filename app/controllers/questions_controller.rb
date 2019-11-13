@@ -16,6 +16,14 @@ class QuestionsController < ApplicationController
 
   end
 
+  def new
+
+  end
+
+  def create
+    render plain: 'saved!'
+  end
+
   private
 
   def rescue_with_question_not_found
