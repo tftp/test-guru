@@ -1,27 +1,21 @@
 class QuestionsController < ApplicationController
 
-#  rescue_from ApplicationController, with: :rescue_with_nothing_error
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-#    result = ["Class: #{params.class}", "Parameters:#{params.inspect} "]
-#    render plain: result.join("\n")
     render json: {questions: Question.where(test_id: params[:test_id].to_i)}
-#    result = Question.where(test_id: params[:test_id].to_i)
-#    render plain: result.to_ary
   end
 
   def show
-    test_id = params[:test_id].to_i
-    id = params[:id].to_i - 1
-    result = Question.where(test_id: test_id)
-    render html: result.to_ary[id].body
+    @test = Test.find(params[:test_id])
+    render html: @test
 
   end
 
 
   privat
 
-  def rescue_with_nothing_error
-    render plain: 'Request wrong!'
+  def rescue_with_question_not_found
+    render plain: 'Question not found!'
   end
 end
