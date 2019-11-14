@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+#    @question = Question.find(params[:id])
     render html: @question.body
   end
 
@@ -23,8 +23,11 @@ class QuestionsController < ApplicationController
   def create
 #    @test = Test.find(params[:test_id])
     @question = @test.questions.new(parameters_questions)
-    @question.save
-    redirect_to test_questions_path
+    if @question.save
+      redirect_to test_questions_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -47,7 +50,7 @@ class QuestionsController < ApplicationController
   end
 
   def parameters_questions
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
 end
