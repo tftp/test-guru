@@ -2,17 +2,13 @@
   Test: <%= @test.title %>
 </h1>
 
+<%= link_to 'Create new', new_test_question_path %> |
 <table>
   <tr>
     <th width = '200'>Body</th>
     <th colspan ="3">Actions</th>
   </tr>
-  <% @questions.each do |question| %>
-  <tr>
-    <td><%=question.body%></td>
-    <td><%= link_to 'Show', question_path(question) %></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <%end%>
+
+<%= render @questions %>
+
 </table>
