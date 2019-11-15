@@ -1,4 +1,4 @@
-<h1>Create new question</h1>
+<h1>Create New <%=question_header(params[:test_id])%> Question</h1>
 
 <%= render 'form', resourse_url: test_questions_path %>
 <%= link_to 'Back', test_questions_path(params[:test_id]) %>
