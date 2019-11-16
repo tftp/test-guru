@@ -3,8 +3,6 @@ class TestsController < ApplicationController
 
 
   def index
-#    result = ["Class: #{params.class}", "Parameters:#{params.inspect} "]
-#    render plain: result.join("\n")
     @test = Test.all
   end
 
