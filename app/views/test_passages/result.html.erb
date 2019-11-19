@@ -1,1 +1,15 @@
 <h1> The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h2>
+  The <% result = result_in_persent(@test_passage) %>
+  <% if result > 85%>
+      Test Passed! Result =
+      <font color ='green'>
+  <% else %>
+      Test Not Passed! Result =
+      <font color ='red'>
+  <% end %>
+  <%= result %>%
+      </font>
+</h2>
+
+<p><%= link_to 'Back to Test', tests_path %></p>
