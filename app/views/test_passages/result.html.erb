@@ -1,7 +1,7 @@
 <h1> The <%= @test_passage.test.title %> Test was Completed!</h1>
 <h2>
   The <% result = result_in_persent(@test_passage) %>
-  <% if result > 85%>
+  <% if @test_passage.success?(result) %>
       Test Passed! Result =
       <font color ='green'>
   <% else %>

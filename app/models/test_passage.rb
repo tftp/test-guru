@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_save_set_next_question
 
+  TEST_LEVEL_PASS = 85
+
   def accept(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -15,6 +17,10 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def success?(result)
+    result > TEST_LEVEL_PASS
   end
 
   def count_question
