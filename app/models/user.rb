@@ -18,4 +18,7 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  validates :email, uniqueness: true
+  validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
+
 end
