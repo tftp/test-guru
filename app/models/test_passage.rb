@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
 
   TEST_LEVEL_PASS = 85
 
-  def accept(answer_ids)
+  def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
