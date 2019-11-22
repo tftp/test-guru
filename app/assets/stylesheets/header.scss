@@ -6,14 +6,11 @@ padding: 10px; clear : both;
 
 #header a {
 color: #fff;
+text-decoration: none;
 }
-
-#header p {
-padding: 2px;
-text-align: left;
-font-size: 270%;
+#header a:hover {
+color: #fff;
 }
-
 .clearfloat {
 
 clear: both;
