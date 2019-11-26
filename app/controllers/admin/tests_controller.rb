@@ -1,6 +1,5 @@
-class Admin::TestsController < ApplicationController
+class Admin::TestsController < Admin::BaseController
 
-  before_action :authenticate_user!
   before_action :set_test, only: %i[show edit update destroy start]
 
   def index
@@ -8,13 +7,8 @@ class Admin::TestsController < ApplicationController
   end
 
   def show
-    redirect_to tests_path
-  end
 
-  def start
-    current_user
-    @current_user.tests.push(@test)
-    redirect_to @current_user.test_passage(@test)
+
   end
 
   def new
@@ -27,17 +21,19 @@ class Admin::TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
+    @test.author = current_user
 
     if @test.save
-      redirect_to @test
+      redirect_to admin_tests_path
     else
       render :new
     end
   end
 
   def update
+    @test.author = current_user
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_tests_path
     else
       render :edit
     end
@@ -45,7 +41,7 @@ class Admin::TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   private

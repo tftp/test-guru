@@ -1,6 +1,5 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
 
-  before_action :authenticate_user!
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
@@ -14,6 +13,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
+
   end
 
   # POST /answers
@@ -21,7 +21,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer, notice: 'Answer was successfuly created'
+      redirect_to [:admin, @question], notice: 'Answer was successfuly created'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1
   def update
     if @answer.update(answer_params)
-      redirect_to @answer
+      redirect_to [:admin, @answer]
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   def destroy
     @answer.destroy
-    redirect_to @answer.question
+    redirect_to [:admin, @answer.question]
   end
 
   private

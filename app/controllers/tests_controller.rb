@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :check_user, only: %i[index]
   before_action :set_test, only: %i[start]
 
   def index
@@ -15,6 +16,13 @@ class TestsController < ApplicationController
 
 
   private
+
+  def check_user
+    if current_user.type == 'Admin'
+      redirect_to admin_tests_path
+    end
+  end
+
 
   def set_test
     @test = Test.find(params[:id])

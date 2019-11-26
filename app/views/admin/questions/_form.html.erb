@@ -1,4 +1,4 @@
-<%= form_with model: @question, url: resourse_url, local: true do |form| %>
+<%= form_with model: [:admin, @question], url: resourse_url, local: true do |form| %>
   <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :body %><br>

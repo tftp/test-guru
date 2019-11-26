@@ -1,0 +1,15 @@
+<h1>
+  Test:<%= @test.title %>:Questions
+</h1>
+
+<%= link_to 'Back', admin_tests_path %> |
+<%= link_to 'Create new question', new_admin_test_question_path %>
+<table>
+  <tr>
+    <th width = '200'>Body</th>
+    <th colspan ="3">Actions</th>
+  </tr>
+
+<%= render @questions %>
+
+</table>
