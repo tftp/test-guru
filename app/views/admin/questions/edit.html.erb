@@ -1,0 +1,4 @@
+<h1><%=question_header(@question)%></h1>
+
+<%= render 'form', resourse_url: admin_question_path  %>
+<%= link_to 'Back', admin_test_path(@question.test) %>
