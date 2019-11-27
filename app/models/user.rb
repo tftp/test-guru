@@ -23,6 +23,10 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def is_admin?
+    self.type == 'Admin'
+  end
+
   validates :email, uniqueness: true
   validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
 
