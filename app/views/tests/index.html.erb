@@ -1,11 +1,11 @@
 
-<h1><%= t('test.index.header') %></h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th width = '200'>Title</th>
-    <th>Questions</th>
-    <th>Actions</th>
+    <th width = '200'><%= t('.title_header') %></th>
+    <th><%= t('.question_header') %></th>
+    <th><%= t('.action_header') %></th>
   </tr>
 
 <%= render @test %>

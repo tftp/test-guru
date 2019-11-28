@@ -6,13 +6,26 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      user:
+        create: "Log in"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      user:
+        remember_me: "Remember me"
+        password: "Password"
+        email: "Email"
+        password_confirmation: "Confirm the Password"
 
   shared:
+    header:
+      login: "Login"
+      signup: "Signup"
+      welcome: "Welcome"
+      logout: "Logout"
+      welcome_to: "Welcome to"
     errors:
       header:
         one: "%{count} error detected"
@@ -22,17 +35,35 @@ en:
   tests:
     index:
       header: "Tests are available:"
+      title_header: "Title"
+      question_header: "Questions"
+      action_header: "Actions"
+    test:
+      start: "Start"
 
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
 
   admin:
+    nav:
+      logout: "Logout"
+      welcome: "Welcome"
+      header: "TestGuru Admin Panel"
     tests:
       create:
         success: "Test was successfully created."
       index:
         header: "Tests are available:"
+        title_header: "Title"
+        question_header: "Questions"
+        action_header: "Actions"
+        new_test: "New Test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
 
   test_mailer:
     completed_test:
