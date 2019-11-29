@@ -18,6 +18,8 @@ en:
         password: "Password"
         email: "Email"
         password_confirmation: "Confirm the Password"
+    select:
+      prompt: "Please select"
 
   shared:
     header:

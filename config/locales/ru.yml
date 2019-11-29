@@ -18,6 +18,8 @@ ru:
         password: "Введите пароль"
         email: "Введите Email"
         password_confirmation: "Повторите пароль"
+    select:
+      prompt: "Нужно выбрать"
 
   shared:
     header:
