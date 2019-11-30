@@ -1,0 +1,74 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      user:
+          create: "Вход"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      user:
+        remember_me: "Запомнить"
+        password: "Введите пароль"
+        email: "Введите Email"
+        password_confirmation: "Повторите пароль"
+    select:
+      prompt: "Нужно выбрать"
+
+  shared:
+    header:
+      login: "Вход"
+      signup: "Регистрация"
+      welcome: "Добро пожаловать"
+      logout: "Выход"
+      welcome_to: "Добро пожаловать в "
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+
+  tests:
+    index:
+      header: "Доступные тесты:"
+      title_header: "Название"
+      question_header: "Вопросы"
+      action_header: "Действия"
+    test:
+      start: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
+
+  admin:
+    nav:
+      logout: "Выход"
+      welcome: "Добро пожаловать"
+      header: "TestGuru Панель Администратора"
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты:"
+        title_header: "Название"
+        question_header: "Вопросы"
+        action_header: "Действия"
+        new_test: "Новый тест"
+      test:
+        show: "Просмотр"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+
+  test_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
