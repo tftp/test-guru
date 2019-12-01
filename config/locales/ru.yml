@@ -22,7 +22,7 @@ ru:
       prompt: "Нужно выбрать"
 
   shared:
-    header:
+    nav:
       login: "Вход"
       signup: "Регистрация"
       welcome: "Добро пожаловать"

@@ -22,7 +22,7 @@ en:
       prompt: "Please select"
 
   shared:
-    header:
+    nav:
       login: "Login"
       signup: "Signup"
       welcome: "Welcome"
