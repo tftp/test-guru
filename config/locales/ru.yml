@@ -53,7 +53,7 @@ ru:
     nav:
       logout: "Выход"
       welcome: "Добро пожаловать"
-      header: "TestGuru Панель Администратора"
+      header: "Панель Администратора"
     tests:
       create:
         success: "Тест успешно создан."
