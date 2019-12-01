@@ -1,13 +1,17 @@
 
-<h1><%= t('.header') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
 
-<table>
-  <tr>
-    <th width = '200'><%= t('.title_header') %></th>
-    <th><%= t('.question_header') %></th>
-    <th><%= t('.action_header') %></th>
-  </tr>
+    <h1><%= t('.header') %></h1>
 
-<%= render @test %>
+    <table class="table table-hover table-sm">
+      <tr>
+        <th scope="col"><%= t('.title_header') %></th>
+        <th scope="col"><%= t('.question_header') %></th>
+        <th scope="col"><%= t('.action_header') %></th>
+      </tr>
+      <%= render @test %>
+    </table>
 
-</table>
+  </div>
+</div>
