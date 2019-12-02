@@ -1,20 +1,25 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-
-    <h1><%= t('.header', title: @test_passage.test.title) %></h1>
-    <h2>
-      The <% result = result_in_persent(@test_passage) %>
+    <div class="alert alert-info" role="alert">
+      <h3 class="alert-heading"><%= t('.header', title: @test_passage.test.title) %></h3>
+    </div>
+      <% result = result_in_persent(@test_passage) %>
       <% if @test_passage.success?(result) %>
-          Test Passed! Result =
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+          <p>Test Passed! Result =
           <font color ='green'>
       <% else %>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Ohoh, No!</h4>
           Test Not Passed! Result =
           <font color ='red'>
       <% end %>
       <%= result %>%
           </font>
-    </h2>
 
-    <p><%= link_to 'Back to Test', tests_path %></p>
+    </div>
+
+    <p><%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %></p>
   </div>
 </div>
