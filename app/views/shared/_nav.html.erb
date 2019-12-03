@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+    <% if user_signed_in? %>
+      <% if current_user.is_admin? %>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to t('.header'),  admin_tests_path, class: "nav-link" %>
+          </li>
+        </ul>
+      <% end %>
+      <div class="nav-admin user">
+        <%= t('.welcome') %>, <b><%= current_user.email.scan(/\w+/)[0].capitalize %></b> Guru |
+        <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+
+    <% else %>
+
+      <div class="nav-admin user">
+        <%= link_to t('.signup'), new_user_registration_path %> |
+        <%= link_to t('.login'), new_user_session_path %>
+      </div>
+    <% end %>
+
+
+</nav>

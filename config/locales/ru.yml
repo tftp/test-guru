@@ -22,12 +22,13 @@ ru:
       prompt: "Нужно выбрать"
 
   shared:
-    header:
+    nav:
       login: "Вход"
       signup: "Регистрация"
       welcome: "Добро пожаловать"
       logout: "Выход"
       welcome_to: "Добро пожаловать в "
+      header: "Панель Администратора"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -47,13 +48,14 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершён!"
+      header: "Тест %{title} завершён!"
+      back_to: "Назад к тестам"
 
   admin:
     nav:
       logout: "Выход"
       welcome: "Добро пожаловать"
-      header: "TestGuru Панель Администратора"
+      header: "Панель Администратора"
     tests:
       create:
         success: "Тест успешно создан."

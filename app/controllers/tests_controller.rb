@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :after_sign_in_path_for, only: %i[index]
+#  before_action :after_sign_in_path_for, only: %i[index]
   before_action :set_test, only: %i[start]
 
   def index

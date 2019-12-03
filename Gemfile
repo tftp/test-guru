@@ -31,6 +31,11 @@ gem 'devise', '~> 4.0'
 # LOCALIZATION
 gem 'rails-i18n', '~> 4.0.0'
 
+# UI
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

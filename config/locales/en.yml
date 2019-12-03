@@ -22,12 +22,13 @@ en:
       prompt: "Please select"
 
   shared:
-    header:
+    nav:
       login: "Login"
       signup: "Signup"
       welcome: "Welcome"
       logout: "Logout"
       welcome_to: "Welcome to"
+      header: "Admin Panel"
     errors:
       header:
         one: "%{count} error detected"
@@ -46,12 +47,13 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+      back_to: "Back to tests"
 
   admin:
     nav:
       logout: "Logout"
       welcome: "Welcome"
-      header: "TestGuru Admin Panel"
+      header: "Admin Panel"
     tests:
       create:
         success: "Test was successfully created."
