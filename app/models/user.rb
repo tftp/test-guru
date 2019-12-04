@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: "Test", foreign_key: "author_id"
+  belongs_to :gist
 
 
   def list_test(level)
