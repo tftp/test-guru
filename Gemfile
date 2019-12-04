@@ -30,7 +30,10 @@ gem 'devise', '~> 4.0'
 
 #NETWORKING
 
-gem 'faraday'
+gem 'faraday', '= 0.17.0'
+# ENV
+gem 'dotenv-rails', groups: [:development, :test]
+gem "octokit", "~> 4.0"
 
 # LOCALIZATION
 gem 'rails-i18n', '~> 4.0.0'
