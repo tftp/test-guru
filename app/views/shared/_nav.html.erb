@@ -3,8 +3,8 @@
 
     <% if user_signed_in? %>
       <% if current_user.is_admin? %>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+        <ul class="nav mr-auto">
+          <li class="nav-item">
             <%= link_to t('.header'),  admin_tests_path, class: "nav-link" %>
           </li>
         </ul>

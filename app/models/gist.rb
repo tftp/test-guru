@@ -1,5 +1,5 @@
 class Gist < ApplicationRecord
-  has_many :questions
-  has_many :users
+  belongs_to :question
+  belongs_to :user
 
 end

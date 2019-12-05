@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to gist.question.body[0,25], admin_question_path(gist.question_id)%></td>
+  <td align = 'center'><%= link_to gist.url[24, 32], gist.url, target: "_blank" %></td>
+  <td><%=gist.user.email%>  </td>
+</tr>

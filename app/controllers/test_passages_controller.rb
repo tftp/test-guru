@@ -30,7 +30,7 @@ class TestPassagesController < ApplicationController
     else
       { alert: t('.failure')}
     end
-
+    result = @test_passage.current_question.gists.create( user:current_user, url: result.html_url )
     redirect_to @test_passage, flash_options
   end
 

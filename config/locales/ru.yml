@@ -57,10 +57,17 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    gists:
+      index:
+        header: "Таблица Gist"
+        question_header: "Вопрос"
+        url_header: "Ссылка на Gist"
+        user_header: "Email пользователя"
     nav:
       logout: "Выход"
       welcome: "Добро пожаловать"
       header: "Панель Администратора"
+      gist_info: "Таблица Gist"
     tests:
       create:
         success: "Тест успешно создан."
