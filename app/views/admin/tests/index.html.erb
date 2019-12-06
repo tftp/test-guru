@@ -1,7 +1,8 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-
-<h1><%= t('.header') %></h1>
+    <div class="alert alert-info" role="alert">
+      <h3 class="alert-heading"><%= t('.header') %></h3>
+    </div>
 
 <p>
   <%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-primary mb-4" %>
@@ -10,7 +11,7 @@
 <table class="table table-hover table-sm">
   <thead>
     <tr>
-      <th class="w-100"><%= t('.title_header') %></th>
+      <th class="text-nowrap"><%= t('.title_header') %></th>
       <th class="text-nowrap"><%= t('.question_header') %></th>
       <th class="text-nowrap"><%= t('.action_header') %></th>
     </tr>

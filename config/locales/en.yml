@@ -1,6 +1,8 @@
 en:
   hello: "Hello world"
 
+  gist_description: 'A question about %{title} from TestGuru'
+
   helpers:
     submit:
       test:
@@ -48,12 +50,22 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       back_to: "Back to tests"
+    gist:
+      success: "Gist was successfully created"
+      failure: "An error occurred while saving gist"
 
   admin:
+    gists:
+      index:
+        header: "Table of Gists"
+        question_header: "Question"
+        url_header: "Url gist"
+        user_header: "Users Email"
     nav:
       logout: "Logout"
       welcome: "Welcome"
       header: "Admin Panel"
+      gist_info: "Table Gist"
     tests:
       create:
         success: "Test was successfully created."
