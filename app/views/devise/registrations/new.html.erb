@@ -19,8 +19,10 @@
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
             </p>
             <p>
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+              <%= f.label :password_confirmation %>
+              <%= octicon 'check', class: 'text-success hide' %>
+              <%= octicon 'alert', class: 'text-danger hide' %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control valid-input' %>
             </p>
           </div>
       </div>
