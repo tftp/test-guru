@@ -6,9 +6,13 @@
     </div>
     <table class="table table-hover table-sm">
       <tr>
-        <th scope="col"><%= t('.title_header') %></th>
-        <th scope="col"><%= t('.question_header') %></th>
-        <th scope="col"><%= t('.action_header') %></th>
+        <th class="text-nowrap sort-by-title pointer">
+          <%= t('.title_header') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
+        <th class="text-nowrap"><%= t('.question_header') %></th>
+        <th class="text-nowrap"><%= t('.action_header') %></th>
       </tr>
       <%= render @test %>
     </table>
