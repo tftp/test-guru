@@ -8,6 +8,11 @@ function validateInput() {
   var password = document.querySelector('input#user_password').value
 //  var password = document.querySelectorAll('input')
   var password_confirm = document.querySelector('input#user_password_confirmation').value
+  if (password_confirm === ''){
+    document.querySelector('.octicon-alert').classList.add('hide')
+    document.querySelector('.octicon-check').classList.add('hide')
+    return
+  }
   if (password === password_confirm) {
     //console.log(document.querySelector('.octicon-check'))
     document.querySelector('.octicon-check').classList.remove('hide')
@@ -15,10 +20,6 @@ function validateInput() {
   } else {
     //console.log(document.querySelector('.octicon-alert'))
     document.querySelector('.octicon-alert').classList.remove('hide')
-    document.querySelector('.octicon-check').classList.add('hide')
-  }
-  if (password_confirm === ''){
-    document.querySelector('.octicon-alert').classList.add('hide')
     document.querySelector('.octicon-check').classList.add('hide')
   }
 }
