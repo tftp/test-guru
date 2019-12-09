@@ -67,6 +67,8 @@ en:
       header: "Admin Panel"
       gist_info: "Table Gist"
     tests:
+      form_inline:
+        submit: "Ok"
       create:
         success: "Test was successfully created."
       index:

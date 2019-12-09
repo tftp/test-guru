@@ -69,6 +69,8 @@ ru:
       header: "Панель Администратора"
       gist_info: "Таблица Gist"
     tests:
+      form_inline:
+        submit: "Ok"
       create:
         success: "Тест успешно создан."
       index:
