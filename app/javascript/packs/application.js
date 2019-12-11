@@ -10,6 +10,7 @@ require("channels");
 
 require("helpers/sorting");
 require("helpers/validinput");
+require("helpers/form_inline");
 
 //import  '../helpers/sorting';
 //import  '../helpers/validating';
