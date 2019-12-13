@@ -4,6 +4,6 @@ class ContactsMailer < ApplicationMailer
     @email = params[:email]
     @body = params[:body]
 
-    mail to: 'testguru2020@gmail.com'
+    mail to: params[:admin_email]
   end
 end
