@@ -2,16 +2,16 @@
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
     <% if user_signed_in? %>
+    <ul class="nav mr-auto">
+      <li class="nav-item">
+        <%= link_to t('.contacts'),  contacts_path, class: "nav-link" %>
+      </li>
       <% if current_user.is_admin? %>
-        <ul class="nav mr-auto">
-          <li class="nav-item">
-            <%= link_to t('.header'),  admin_tests_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to t('.contacts'),  contacts_path, class: "nav-link" %>
-          </li>
-        </ul>
+        <li class="nav-item">
+          <%= link_to t('.header'),  admin_tests_path, class: "nav-link" %>
+        </li>
       <% end %>
+    </ul>
       <div class="nav-admin user">
         <%= t('.welcome') %>, <b><%= current_user.email.scan(/\w+/)[0].capitalize %></b> Guru |
         <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
