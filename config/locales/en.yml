@@ -61,6 +61,8 @@ en:
     gist:
       success: "Gist was successfully created"
       failure: "An error occurred while saving gist"
+    show:
+      failure: 'Not any questions'
 
   admin:
     gists:

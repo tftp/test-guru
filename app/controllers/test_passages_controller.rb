@@ -4,7 +4,9 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show
-
+    unless @test_passage.current_question
+      redirect_to root_path, { alert: t('.failure')}
+    end
   end
 
   def result

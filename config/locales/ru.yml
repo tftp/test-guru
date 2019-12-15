@@ -63,6 +63,8 @@ ru:
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
+    show:
+      failure: 'У теста нет вопросов для прохождения'
 
   admin:
     gists:
