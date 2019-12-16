@@ -31,4 +31,22 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
 
+
+  def rule_for_all_tests_success
+
+  end
+
+  def rule_for_test_success
+
+  end
+
+  def rule_for_tests_success_by_category
+
+  end
+
+  def rule_for_tests_success_by_level
+
+  end
+
+
 end
