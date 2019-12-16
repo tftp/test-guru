@@ -3,6 +3,13 @@ en:
 
   gist_description: 'A question about %{title} from TestGuru'
 
+  contacts:
+    index:
+      send_us: 'Please, let us know in the form below'
+      send: 'Send message'
+    send_message:
+      success: 'The message was successfully sent'
+
   helpers:
     submit:
       test:
@@ -31,6 +38,7 @@ en:
       logout: "Logout"
       welcome_to: "Welcome to"
       header: "Admin Panel"
+      contacts: "Contacts"
     errors:
       header:
         one: "%{count} error detected"
@@ -53,6 +61,8 @@ en:
     gist:
       success: "Gist was successfully created"
       failure: "An error occurred while saving gist"
+    show:
+      failure: 'Not any questions'
 
   admin:
     gists:
@@ -66,6 +76,7 @@ en:
       welcome: "Welcome"
       header: "Admin Panel"
       gist_info: "Table Gist"
+      contacts: "Contacts"
     tests:
       form_inline:
         submit: "Ok"

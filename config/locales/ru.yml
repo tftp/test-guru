@@ -3,6 +3,13 @@ ru:
 
   gist_description: 'Вопрос о %{title} с TestGuru'
 
+  contacts:
+    index:
+      send_us: 'Форма обратной связи:'
+      send: 'Послать сообщение'
+    send_message:
+      success: 'Сообщение успешно отправлено'
+
   helpers:
     submit:
       test:
@@ -31,6 +38,7 @@ ru:
       logout: "Выход"
       welcome_to: "Добро пожаловать в "
       header: "Панель Администратора"
+      contacts: "Контакты"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -55,6 +63,8 @@ ru:
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
+    show:
+      failure: 'У теста нет вопросов для прохождения'
 
   admin:
     gists:
@@ -68,6 +78,7 @@ ru:
       welcome: "Добро пожаловать"
       header: "Панель Администратора"
       gist_info: "Таблица Gist"
+      contacts: "Контакты"
     tests:
       form_inline:
         submit: "Ok"
