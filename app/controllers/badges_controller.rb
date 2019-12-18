@@ -1,7 +1,7 @@
 class BadgesController < ApplicationController
 
   def index
-    @badge = Badge.rule_not_nil
+    @badge = Badge.all
   end
 
 end

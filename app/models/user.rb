@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: "Test", foreign_key: "author_id"
   has_many :gists
+  has_and_belongs_to_many :badges
 
 
   def list_test(level)
@@ -31,6 +32,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
 
+  def list_of_rule
+    self.methods.select {|m| m=~/\Arule/}
+  end
 
   def rule_for_all_tests_success
 
@@ -40,11 +44,11 @@ class User < ApplicationRecord
 
   end
 
-  def rule_for_tests_success_by_category
+  def rule_for_tests_success_of_category
 
   end
 
-  def rule_for_tests_success_by_level
+  def rule_for_tests_success_of_level
 
   end
 

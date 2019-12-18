@@ -1,9 +1,17 @@
 <div class="col-sm-3">
   <div class="card">
-    <%= content_tag :img, nil, src: root_path + badge.filename, class: "card-img-top" %>
+    <%= content_tag :img, nil, src: root_path + badge.picture.url, class: "card-img-top" %>
     <div class="card-body">
       <h5 class="card-title"><%= badge.title %> </h5>
-      <a href="#" class="btn btn-primary">Edit Badge</a>
+      <%= link_to t('.edit_badge'),
+                  edit_admin_badge_path(badge),
+                  class: "btn btn-primary" %>
+      <%= link_to t('.delete_badge'),
+                    admin_badge_path(badge),
+                    method: :delete,
+                    data:   {confirm: t('.confirm')},
+                    class: "btn btn-danger" %>
+
     </div>
   </div>
 </div>

@@ -22,6 +22,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      badge:
+        title: "Название"
       user:
         remember_me: "Запомнить"
         password: "Введите пароль"
@@ -95,6 +97,10 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
         confirm: "Вы уверены?"
+    badges:
+      badge:
+        delete_badge: "Удалить Бейдж "
+        edit_badge: "Изменить Бейдж"
 
   test_mailer:
     completed_test:
