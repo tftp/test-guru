@@ -8,6 +8,14 @@ class TestPassage < ApplicationRecord
 
   TEST_LEVEL_PASS = 85
 
+  def self.all_test_passages_success (user)
+    test_passages = []
+    TestPassage.where(user: user).each do |test_passage|
+      test_passages << test_passage if test_passage.success?(test_passage.result_in_persent)
+    end
+    return test_passages
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -17,6 +25,10 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def result_in_persent
+    self.correct_questions.to_f / self.count_all_questions * 100
   end
 
   def success?(result)

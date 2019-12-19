@@ -3,7 +3,15 @@
     <%= content_tag :img, nil, src: root_path + badge.picture.url, class: "card-img-top" %>
     <div class="card-body">
       <h5 class="card-title"><%= badge.title %> </h5>
-
+        <% if current_user.badges.exists?(badge.id) %>
+        <div class="alert alert-success" role="alert">
+          Бейдж получен!
+        </div>
+        <% else %>
+        <div class="alert alert-danger" role="alert">
+          Бейдж не получен!
+        </div>
+        <% end %>
     </div>
   </div>
 </div>

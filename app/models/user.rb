@@ -36,20 +36,20 @@ class User < ApplicationRecord
     self.methods.select {|m| m=~/\Arule/}
   end
 
-  def rule_for_all_tests_success
+  def rule_for_test_success(test_passage, badge)
+    self.badges.push badge
+  end
+
+  def rule_for_tests_success_of_category(test_passage, badge)
+    category = test_passage.test.category.title
+    #Test.tests_for_category(category).each do |test|
+    #  if test_passages.test
+    #end
 
   end
 
-  def rule_for_test_success
-
-  end
-
-  def rule_for_tests_success_of_category
-
-  end
-
-  def rule_for_tests_success_of_level
-
+  def rule_for_tests_success_of_level(test_passage, badge)
+    d
   end
 
 

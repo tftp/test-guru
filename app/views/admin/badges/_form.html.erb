@@ -13,7 +13,7 @@
   Select Picture:
 <div class='form-check'>
   <%= form.collection_radio_buttons :picture_id, Picture.all, :id, :url, include_hidden: false do |b| %>
-      <p>
+
       <%= b.radio_button id: "picture_id_#{b.object.id}" %>
       <%#= b.label%>
       <%= content_tag :img, nil, src: root_path + b.text, width: '100' %>
