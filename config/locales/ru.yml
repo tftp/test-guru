@@ -23,7 +23,10 @@ ru:
         level: "Уровень"
         category_id: "Категория"
       badge:
-        title: "Название"
+        title: "Название:"
+        option: "Опции:"
+        select_picture: "Выберите картинку:"
+        select_rule: "Выберите правило:"
       user:
         remember_me: "Запомнить"
         password: "Введите пароль"

@@ -6,20 +6,32 @@
   <%= form .text_field :title, id: :badge_title %>
 </p>
 <p>
-  <%= form.label :rule %><br>
-  <%= form.select :rule, current_user.list_of_rule, include_blank: 'Select Rule' %>
-</p>
-<p>
-  Select Picture:
+  <%= form.label :select_rule %>
 <div class='form-check'>
-  <%= form.collection_radio_buttons :picture_id, Picture.all, :id, :url, include_hidden: false do |b| %>
+  <%= form.collection_radio_buttons :rule_id, Rule.all, :id, :body, include_hidden: false do |b| %>
 
-      <%= b.radio_button id: "picture_id_#{b.object.id}" %>
-      <%#= b.label%>
-      <%= content_tag :img, nil, src: root_path + b.text, width: '100' %>
+      <%= b.radio_button id: "rule_id_#{b.object.id}" %>
+      <%= b.label%><br>
 
   <% end %>
 </div>
+</p>
+<p>
+  <%= form.label :select_picture %>
+  <div class='form-check'>
+    <%= form.collection_radio_buttons :picture_id, Picture.all, :id, :url, include_hidden: false do |b| %>
+
+        <%= b.radio_button id: "picture_id_#{b.object.id}" %>
+        <%#= b.label%>
+        <%= content_tag :img, nil, src: root_path + b.text, width: '100' %>
+
+    <% end %>
+  </div>
+</p>
+<p>
+  <%= form.label :option %>
+  <small id="emailHelp" class="form-text text-muted">Введите номер уровня, название категории или оставьте поле пустым.</small>
+  <%= form .text_field :option, id: :badge_option %>
 </p>
 <p>
   <%= form.submit %>

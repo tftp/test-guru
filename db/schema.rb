@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_185154) do
+ActiveRecord::Schema.define(version: 2019_12_20_053858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(version: 2019_12_18_185154) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "rule", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "picture_id"
+    t.string "option", default: "", null: false
+    t.bigint "rule_id"
     t.index ["picture_id"], name: "index_badges_on_picture_id"
+    t.index ["rule_id"], name: "index_badges_on_rule_id"
   end
 
   create_table "badges_users", id: false, force: :cascade do |t|
@@ -68,6 +70,13 @@ ActiveRecord::Schema.define(version: 2019_12_18_185154) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "test_id"
     t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "rules", force: :cascade do |t|
+    t.string "command", null: false
+    t.string "body", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "test_passages", force: :cascade do |t|
@@ -121,6 +130,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_185154) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "badges", "pictures"
+  add_foreign_key "badges", "rules"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
