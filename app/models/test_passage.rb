@@ -8,12 +8,12 @@ class TestPassage < ApplicationRecord
 
   TEST_LEVEL_PASS = 85
 
-  def self.all_test_passages_success (user)
-    test_passages = []
-    TestPassage.where(user: user).each do |test_passage|
-      test_passages << test_passage if test_passage.success?(test_passage.result_in_persent)
+  def self.has_success?(user, test)
+    test_passages_success =[]
+    TestPassage.where(user_id: user.id, test_id: test.id).each do |test_passage|
+      test_passages_success << test_passage if test_passage.success?(test_passage.result_in_persent)
     end
-    return test_passages
+    return !test_passages_success.empty?
   end
 
   def accept!(answer_ids)

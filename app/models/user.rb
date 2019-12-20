@@ -37,19 +37,35 @@ class User < ApplicationRecord
   end
 
   def rule_for_test_success(test_passage, badge)
-    self.badges.push badge
+    if badge.option.empty?
+      if self.tests.where(id: test_passage.test_id).count == 1
+        self.badges.push badge
+        return badge
+      end
+    else
+      if self.tests.where(title: badge.option, id: test_passage.test_id).count == 1
+        self.badges.push badge
+        return badge
+      end
+    end
   end
 
   def rule_for_tests_success_of_category(test_passage, badge)
     category = test_passage.test.category.title
-    #Test.tests_for_category(category).each do |test|
-    #  if test_passages.test
-    #end
-
+    return unless category == badge.option
+    Test.tests_for_category(category).each do |test|
+      return unless TestPassage.has_success?(self, test)
+    end
+    self.badges.push badge
   end
 
   def rule_for_tests_success_of_level(test_passage, badge)
-    d
+    level = test_passage.test.level.to_s
+    return unless level == badge.option
+    Test.level(level.to_i).each do |test|
+      return unless TestPassage.has_success?(self, test)
+    end
+    self.badges.push badge
   end
 
 

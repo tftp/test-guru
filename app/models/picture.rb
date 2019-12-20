@@ -1,5 +1,5 @@
 class Picture < ApplicationRecord
 
-  has_one :badge
+  has_many :badges, dependent: :destroy
 
 end
