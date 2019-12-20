@@ -104,6 +104,9 @@ ru:
       badge:
         delete_badge: "Удалить Бейдж "
         edit_badge: "Изменить Бейдж"
+        confirm: "Вы уверены?"
+      create:
+        success: "Бейдж успешно создан."
 
   test_mailer:
     completed_test:

@@ -10,11 +10,12 @@ class User < ApplicationRecord
           :confirmable
 
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: "Test", foreign_key: "author_id"
   has_many :gists
-  has_and_belongs_to_many :badges
+  has_many :badge_users, dependent: :destroy
+  has_many :badges, through: :badge_users
 
 
   def list_test(level)

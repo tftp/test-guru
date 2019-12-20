@@ -18,11 +18,25 @@
       <%= result %>%
           </font>
       </div>
-<div>
-Your badges:
-
-</div>
 
     <p><%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %></p>
   </div>
+</div>
+<table align = 'center'>
+<tr>
+    <% BadgeUser.seconds_ago.each do |badge_users| %>
+    <td>
+    <div class="card"  style="width: 18rem;">
+      <%= content_tag :img, nil, src: root_path + badge_users.badge.picture.url, class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= badge_users.badge.title %> </h5>
+          <div class="alert alert-success" role="alert">
+            Бейдж получен!
+          </div>
+      </div>
+    </div>
+  </td>
+    <% end %>
+  </tr>
+  </table>
 </div>
