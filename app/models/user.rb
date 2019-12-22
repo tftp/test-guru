@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: "Test", foreign_key: "author_id"
-  has_many :gists
+  has_many :gists, dependent: :destroy
   has_many :badge_users, dependent: :destroy
   has_many :badges, through: :badge_users
 

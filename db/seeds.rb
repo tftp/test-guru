@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+TestPassage.delete_all
+Gist.delete_all
 User.delete_all
 Answer.delete_all
 Question.delete_all
@@ -14,16 +16,16 @@ Category.delete_all
 Picture.delete_all
 Rule.delete_all
 
-User.created(name: 'OS', email: 'sergeichforever@inbox.ru', password: 'qwerty')
+User.create(name: 'OS', email: 'sergeichforever@inbox.ru', password: 'qwerty')
 
 Picture.create(url: 'b1.png')
 Picture.create(url: 'b2.png')
 Picture.create(url: 'b3.png')
 Picture.create(url: 'b4.png')
 
-Rule.created(command: "rule_for_test_success", body: "Успешное прохождение теста с первой попытки")
-Rule.created(command: "rule_for_tests_success_of_category", body: "Успешное прохождение всех тестов категории")
-Rule.created(command: "rule_for_tests_success_of_level", body: "Успешное прохождение всех тестов уровня")
+Rule.create(command: "rule_for_test_success", body: "Успешное прохождение теста с первой попытки")
+Rule.create(command: "rule_for_tests_success_of_category", body: "Успешное прохождение всех тестов категории")
+Rule.create(command: "rule_for_tests_success_of_level", body: "Успешное прохождение всех тестов уровня")
 
 category1 = Category.create(title: 'Frontend')
 category2 = Category.create(title: 'Backend')
