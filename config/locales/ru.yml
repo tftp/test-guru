@@ -16,7 +16,9 @@ ru:
         create: "Создать Тест"
         update: "Обновить Тест"
       user:
-          create: "Вход"
+        create: "Вход"
+      badge:
+        create: "Создать Бейдж"
     label:
       test:
         title: "Название"
@@ -107,7 +109,21 @@ ru:
         confirm: "Вы уверены?"
       create:
         success: "Бейдж успешно создан."
+      index:
+        new_badge: "Создать Бейдж"
+        all_badges: "Все Бейджи"
+      new:
+        back: "Назад"
+        create_badge: "Создание Бейджа"
 
   test_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  activerecord:
+    errors:
+      models:
+        badge:
+          attributes:
+            picture:
+              required: "Необходимо выбрать картинку"
