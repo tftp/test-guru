@@ -18,8 +18,4 @@ module TestPassagesHelper
         aria_valuemax: 100
   end
 
-  def user_badges
-    BadgeUser.seconds_ago
-  end
-
 end
