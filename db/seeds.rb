@@ -16,7 +16,8 @@ Category.delete_all
 Picture.delete_all
 Rule.delete_all
 
-user1 = User.create(name: 'OS', email: 'sergeichforever@inbox.ru', password: 'qwerty')
+#user1 = User.create(name: 'OS', email: 'sergeichforever@inbox.ru', password: 'qwerty')
+user1 = User.create(name: 'jon', email: 'jon@example.com', password: 'qwerty')
 
 Picture.create(url: 'b1.png')
 Picture.create(url: 'b2.png')
