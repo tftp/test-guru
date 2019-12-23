@@ -9,7 +9,6 @@ class TestPassage < ApplicationRecord
   TEST_LEVEL_PASS = 85
 
   def self.has_success?(user, test)
-    test_passages_success =[]
     !TestPassage.where(user_id: user.id, test_id: test.id, success: true).empty?
   end
 

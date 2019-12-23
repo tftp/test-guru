@@ -18,7 +18,12 @@
       <%= result %>%
           </font>
       </div>
-      <p><%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %></p>
+      <div class="btn-group">
+        <%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %>
+      </div>
+      <div class="btn-group">
+        <%= button_to t('.badges'), badges_path, class: 'btn btn-primary', method: :get %>
+      </div>
     </div>
   </div>
 </div>
