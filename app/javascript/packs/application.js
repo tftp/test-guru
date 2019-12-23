@@ -11,6 +11,7 @@ require("channels");
 require("helpers/sorting");
 require("helpers/validinput");
 require("helpers/form_inline");
+require("helpers/timing");
 
 //import  '../helpers/sorting';
 //import  '../helpers/validating';
