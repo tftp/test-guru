@@ -10,10 +10,7 @@ class TestPassage < ApplicationRecord
 
   def self.has_success?(user, test)
     test_passages_success =[]
-    TestPassage.where(user_id: user.id, test_id: test.id).each do |test_passage|
-      test_passages_success << test_passage if test_passage.success?(test_passage.result_in_persent)
-    end
-    return !test_passages_success.empty?
+    !TestPassage.where(user_id: user.id, test_id: test.id, success: true).empty?
   end
 
   def accept!(answer_ids)
@@ -31,8 +28,8 @@ class TestPassage < ApplicationRecord
     self.correct_questions.to_f / self.count_all_questions * 100
   end
 
-  def success?(result)
-    result > TEST_LEVEL_PASS
+  def success?
+    self.result_in_persent > TEST_LEVEL_PASS
   end
 
   def count_question
@@ -65,7 +62,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first if current_question
   end
 
 end

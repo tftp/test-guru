@@ -4,7 +4,7 @@
       <h3 class="alert-heading"><%= t('.header', title: @test_passage.test.title) %></h3>
     </div>
       <% result = result_in_persent(@test_passage) %>
-      <% if @test_passage.success?(result) %>
+      <% if @test_passage.success? %>
       <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Well done!</h4>
           <p>Test Passed! Result =
