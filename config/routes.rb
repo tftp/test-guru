@@ -31,6 +31,9 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges, shallow: true
   end
+
+  resources :badges, only: :index
 
 end

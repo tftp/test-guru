@@ -10,11 +10,16 @@ class User < ApplicationRecord
           :confirmable
 
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: "Test", foreign_key: "author_id"
-  has_many :gists
+  has_many :gists, dependent: :destroy
+  has_many :badge_users, dependent: :destroy
+  has_many :badges, through: :badge_users, dependent: :destroy
 
+
+  validates :email, uniqueness: true
+  validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
 
   def list_test(level)
     self.tests.where(level: level)
@@ -27,8 +32,5 @@ class User < ApplicationRecord
   def is_admin?
     self.type == 'Admin'
   end
-
-  validates :email, uniqueness: true
-  validates :email, format: { with: /\A\w+@\w+\.[a-z]{2,3}\z/}
 
 end

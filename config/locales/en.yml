@@ -17,11 +17,18 @@ en:
         update: "Update Test"
       user:
         create: "Log in"
+      badge:
+        create: "Create Badge"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      badge:
+        title: "Title:"
+        option: "Option:"
+        select_picture: "Select picture:"
+        select_rule: "Select rule:"
       user:
         remember_me: "Remember me"
         password: "Password"
@@ -93,6 +100,19 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "Are you sure?"
+    badges:
+      badge:
+        delete_badge: "Delete Badge "
+        edit_badge: "Edit badge"
+        confirm: "Are you sure?"
+      create:
+        success: "Badge was successfully created."
+      index:
+        new_badge: "New Badge"
+        all_badges: "All Badges"
+      new:
+        back: "Back"
+        create_badge: "Create Badge"
 
   test_mailer:
     completed_test:

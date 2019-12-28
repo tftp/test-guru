@@ -8,6 +8,10 @@ class TestPassage < ApplicationRecord
 
   TEST_LEVEL_PASS = 85
 
+  def self.has_success?(user, test)
+    !TestPassage.where(user_id: user.id, test_id: test.id, success: true).empty?
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -19,8 +23,12 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def success?(result)
-    result > TEST_LEVEL_PASS
+  def result_in_persent
+    self.correct_questions.to_f / self.count_all_questions * 100
+  end
+
+  def success?
+    self.result_in_persent > TEST_LEVEL_PASS
   end
 
   def count_question
@@ -53,7 +61,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first if current_question
   end
 
 end

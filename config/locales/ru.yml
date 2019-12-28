@@ -3,6 +3,13 @@ ru:
 
   gist_description: 'Вопрос о %{title} с TestGuru'
 
+  badges:
+    index:
+      all_badges: "Все Награды"
+    badge:
+      badge_received: "Награда получена"
+      badge_not_received: "Награда не получена"
+
   contacts:
     index:
       send_us: 'Форма обратной связи:'
@@ -16,12 +23,19 @@ ru:
         create: "Создать Тест"
         update: "Обновить Тест"
       user:
-          create: "Вход"
+        create: "Вход"
+      badge:
+        create: "Создать Награду"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      badge:
+        title: "Название:"
+        option: "Опции:"
+        select_picture: "Выберите картинку:"
+        select_rule: "Выберите правило:"
       user:
         remember_me: "Запомнить"
         password: "Введите пароль"
@@ -39,6 +53,7 @@ ru:
       welcome_to: "Добро пожаловать в "
       header: "Панель Администратора"
       contacts: "Контакты"
+      badges: "Награды"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -60,6 +75,7 @@ ru:
     result:
       header: "Тест %{title} завершён!"
       back_to: "Назад к тестам"
+      badges: "Посмотреть Награды"
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
@@ -79,6 +95,7 @@ ru:
       header: "Панель Администратора"
       gist_info: "Таблица Gist"
       contacts: "Контакты"
+      badges: "Награды"
     tests:
       form_inline:
         submit: "Ok"
@@ -95,7 +112,28 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
         confirm: "Вы уверены?"
+    badges:
+      badge:
+        delete_badge: "Удалить Награду "
+        edit_badge: "Изменить Награду"
+        confirm: "Вы уверены?"
+      create:
+        success: "Награда успешно создана."
+      index:
+        new_badge: "Создать Награду"
+        all_badges: "Все Награды"
+      new:
+        back: "Назад"
+        create_badge: "Создание Наград"
 
   test_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  activerecord:
+    errors:
+      models:
+        badge:
+          attributes:
+            picture:
+              required: "Необходимо выбрать картинку"

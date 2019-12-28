@@ -4,7 +4,7 @@
       <h3 class="alert-heading"><%= t('.header', title: @test_passage.test.title) %></h3>
     </div>
       <% result = result_in_persent(@test_passage) %>
-      <% if @test_passage.success?(result) %>
+      <% if @test_passage.success? %>
       <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Well done!</h4>
           <p>Test Passed! Result =
@@ -17,9 +17,13 @@
       <% end %>
       <%= result %>%
           </font>
-
+      </div>
+      <div class="btn-group">
+        <%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %>
+      </div>
+      <div class="btn-group">
+        <%= button_to t('.badges'), badges_path, class: 'btn btn-primary', method: :get %>
+      </div>
     </div>
-
-    <p><%= button_to t('.back_to'), root_path, class: 'btn btn-primary', method: :get %></p>
   </div>
 </div>
