@@ -32,9 +32,9 @@ class BadgeService
   end
 
   def rule_for_tests_success_of_level(badge)
-    level = @test_passage.test.level.to_s
-    return unless level == badge.option
-    Test.level(level.to_i).each do |test|
+    level = @test_passage.test.level
+    return unless level.to_s == badge.option
+    Test.level(level).each do |test|
       return unless TestPassage.has_success?(@current_user, test)
     end
     @current_user.badges.push badge
