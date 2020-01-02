@@ -4,9 +4,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  before_update :before_save_set_next_question
+  #before_validation :before_validation_set_timedown, on: :create
+  #before_update :before_save_set_next_question
 
   TEST_LEVEL_PASS = 85
+  SECONDS_IN_MINUTE = 60
 
   def self.has_success?(user, test)
     !TestPassage.where(user_id: user.id, test_id: test.id, success: true).empty?
@@ -16,6 +18,7 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
+    before_save_set_next_question
     save!
   end
 
@@ -24,7 +27,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result_in_persent
-    self.correct_questions.to_f / self.count_all_questions * 100
+    (self.correct_questions.to_f / self.count_all_questions * 100).to_i
   end
 
   def success?
@@ -39,11 +42,20 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def timedown
+    (self.created_at + test.timeset * SECONDS_IN_MINUTE - Time.now).to_i
+  end
+
   private
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
   end
+
+  #def before_validation_set_timedown
+  #  return if test.timeset.zero?
+  #  self.timedown = test.timeset * SECONDS_IN_MINUTE
+  #end
 
   def before_save_set_next_question
     self.current_question = next_question
