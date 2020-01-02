@@ -30,6 +30,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        timeset: "Время прохождения в минутах"
         category_id: "Категория"
       badge:
         title: "Название:"
@@ -108,6 +109,7 @@ ru:
         question_header: "Вопросы"
         action_header: "Действия"
         new_test: "Новый тест"
+        timeset_header: "Время прохождения, мин."
       test:
         show: "Просмотр"
         edit: "Изменить"
