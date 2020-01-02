@@ -3,15 +3,23 @@ document.addEventListener('turbolinks:load', function() {
   if (control.innerText !== 0) { startTimer() }
 })
 
+
 function startTimer(){
   var timer = document.querySelector('.timer');
   var time = timer.innerText;
-  var arr = time.split(":")
+  var arr = [];
+  if (!time.includes(':')){
+    arr[0] = parseInt(time / 60);
+    arr[1] = time % 60;
+  } else {
+    arr = time.split(":");
+  }
   var m = arr[0];
   var s = arr[1];
   if (s == 0) {
     if (m == 0) {
       alert ("Time out");
+      window.location.reload();
       return;
     }
     m--;
