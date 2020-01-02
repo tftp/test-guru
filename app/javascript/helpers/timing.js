@@ -18,8 +18,9 @@ function startTimer(){
   var s = arr[1];
   if (s == 0) {
     if (m == 0) {
-      alert ("Time out");
-      window.location.reload();
+      //alert ("Time out");
+      //window.location.reload();
+      document.querySelector('form').submit();
       return;
     }
     m--;
