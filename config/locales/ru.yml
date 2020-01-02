@@ -68,6 +68,7 @@ ru:
       title_header: "Название"
       question_header: "Вопросы"
       action_header: "Действия"
+      timeset_header: "Время прохождения, мин."
     test:
       start: "Старт"
 

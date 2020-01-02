@@ -58,6 +58,7 @@ en:
       title_header: "Title"
       question_header: "Questions"
       action_header: "Actions"
+      timeset_header: "Times passing, min."
     test:
       start: "Start"
 
