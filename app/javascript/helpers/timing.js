@@ -3,7 +3,6 @@ document.addEventListener('turbolinks:load', function() {
   if (control.innerText !== 0) { startTimer() }
 })
 
-
 function startTimer(){
   var timer = document.querySelector('.timer');
   var time = timer.innerText;
@@ -18,8 +17,6 @@ function startTimer(){
   var s = arr[1];
   if (s == 0) {
     if (m == 0) {
-      //alert ("Time out");
-      //window.location.reload();
       document.querySelector('form').submit();
       return;
     }
