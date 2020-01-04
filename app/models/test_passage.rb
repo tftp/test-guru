@@ -42,6 +42,10 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def is_timeout?
+    !self.timedown.positive?
+  end
+
   def timedown
     (self.created_at + test.timeset * SECONDS_IN_MINUTE - Time.now).to_i
   end
