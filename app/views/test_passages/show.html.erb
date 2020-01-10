@@ -1,7 +1,12 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-6">
+  <div class="col col-md-8">
     <div class="alert alert-info" role="alert">
-      <h3 class="alert-heading">Passing the <%= @test_passage.test.title %> Test </h3>
+      <h3 class="alert-heading">
+        Passing the <%= @test_passage.test.title %> Test
+        <span  class="badge badge-secondary timer ">
+          <%= timecount %>
+        </span>
+      </h3>
     </div>
 
     <div class="card border-info">
@@ -10,9 +15,6 @@
           <h4 class="alert-heading"><%= @test_passage.current_question.body %>
           <span class="badge badge-secondary">
             <%= @test_passage.count_question %>/<%= @test_passage.count_all_questions %>
-          </span>
-          <span  class="badge badge-secondary timer hide">
-            15
           </span>
         </h4>
         <div class="progress">

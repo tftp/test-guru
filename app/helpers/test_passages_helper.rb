@@ -18,4 +18,7 @@ module TestPassagesHelper
         aria_valuemax: 100
   end
 
+  def timecount
+    @test_passage.timedown
+  end
 end

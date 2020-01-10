@@ -1,5 +1,5 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-6">
+  <div class="col">
     <div class="alert alert-info" role="alert">
       <h3 class="alert-heading"><%= t('.header') %></h3>
     </div>
@@ -13,12 +13,13 @@
     <table class="table table-hover table-sm">
       <thead>
         <tr>
-          <th class="text-nowrap sort-by-title pointer">
+          <th class="align-middle sort-by-title pointer">
             <%= t('.title_header') %>
             <%= octicon 'arrow-up', class: 'text-success hide' %>
             <%= octicon 'arrow-down', class: 'text-success hide' %>
           </th>
           <th class="align-middle"><%= t('.question_header') %></th>
+          <th class="align-middle"><%= t('.timeset_header') %></th>
           <th class="align-middle"><%= t('.action_header') %></th>
         </tr>
       </thead>

@@ -23,6 +23,7 @@ en:
       test:
         title: "Title"
         level: "Level"
+        timeset: "Times passed in minutes"
         category_id: "Category"
       badge:
         title: "Title:"
@@ -58,6 +59,7 @@ en:
       title_header: "Title"
       question_header: "Questions"
       action_header: "Actions"
+      timeset_header: "Times passing, min."
     test:
       start: "Start"
 
@@ -95,6 +97,7 @@ en:
         question_header: "Questions"
         action_header: "Actions"
         new_test: "New Test"
+        timeset_header: "Times passing, min."
       test:
         show: "Show"
         edit: "Edit"
